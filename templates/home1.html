@@ -1,0 +1,574 @@
+
+
+<!DOCTYPE html>
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  
+
+  <nav style="color:grey" class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="{% url 'grocery:home1' %}">Grocery Recommendation</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'grocery:home1' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'grocery:result' userid %}">Recommended Items</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'grocery:mycart' %}">Cart</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          My Account
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {% if request.user.customer %}
+          <a class="dropdown-item" href="{% url 'grocery:customerprofile' %}">My Profile</a>
+          <a class="dropdown-item" href="{% url 'grocery:customerlogout' %}">Logout</a>
+          {% else %}
+          <a class="dropdown-item" href="{% url 'grocery:customerregistration' %}">Register</a>
+          <a class="dropdown-item" href="{% url 'grocery:customerlogin' %}">Login</a>
+          {% endif %}
+          </div>
+      </li>
+        </ul>
+
+        </form>
+    </div>
+    </nav>
+
+
+  
+
+
+
+  
+  <style>
+body {
+ 
+  padding: 0px;
+  background: #f8f4f2;
+  font-family: Arial;
+}
+
+.a-box {
+  display: inline-block;
+  width: 500px;
+  padding:80px;
+  
+}
+
+.img-container {
+    height: 230px;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 0px 0px 20px 20px;
+    display: inline-block;
+    
+}
+
+.img-container img {
+    transform: skew(0deg, -13deg);
+    height: 250px;
+    margin: -35px 0px 0px -70px;
+}
+
+.inner-skew {
+    display: inline-block;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0px;
+    transform: skew(0deg, 13deg);
+    font-size: 0px;
+    margin: 30px 0px 0px 0px;
+    background: #c8c2c2;
+    height: 250px;
+    width: 300px;
+}
+
+.text-container {
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+  padding: 120px 20px 20px 20px;
+  border-radius: 20px;
+  background: #fff;
+  margin: -120px 0px 0px 0px;
+  line-height: 19px;
+  font-size: 14px;
+}
+
+.text-container h3 {
+  margin: 20px 0px 10px 0px;
+  color: #04bcff;
+  font-size: 18px;
+}
+</style>
+</head>
+<body>
+
+
+ 
+    <table >
+<tr>
+    <td>
+    
+<div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://s3.envato.com/files/315667712/DSC_7799.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Fresh Vegetables'  %}"><h3>Fresh Vegetables</h3> </a>
+      <div>
+        vegetables that have not been processed in any manner.
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://www.mashed.com/img/gallery/the-secret-to-making-incredible-sauces/intro-1541603634.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Sauces'  %}"> <h3>Sauces</h3></a>
+      <div>
+        Sauces are often used to cover up the flavor of less-than-perfect meats, poultry and seafood.
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://www.bruker.com/en/applications/food-analysis-and-agriculture/food-quality/milk-and-dairy/_jcr_content/root/herostage/backgroundImageVPL.coreimg.82.1920.jpeg/1596451146895/milk-dairy.jpeg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Dairy'  %}"> <h3>Dairy</h3></a>
+      <div>
+        Dairy product includes any of the foods made from milk, including butter, cheese, ice cream, yogurt, and condensed and dried milk.
+    </div>
+  </div>
+</td>
+</tr>
+<tr>
+    <td>
+    
+<div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://www.foodbusinessnews.net/ext/resources/2020/2/Blended-protein-bread_Lead.jpg?t=1581622397&width=1080">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Baked goods'  %}"> <h3>Baked goods</h3></a>
+      <div>
+        Baked goods categories like bars, breads , cookies, desserts, muffins, snack cakes, sweet goods.
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/general-nutrition-wellness/2-2-2-3foodgroups_fruits_detailfeature.jpg?sfvrsn=64942d53_4">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Fruits'  %}"> <h3>Fruits</h3></a>
+      <div>
+        Fruits are an important part of a healthy eating pattern and the source of many vital nutrients.
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://media.gettyimages.com/photos/bag-of-groceries-over-a-black-background-picture-id1204096893?s=612x612">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Variousgroceries'  %}"> <h3>Various groceries</h3></a>
+      <div>
+        Food and day to day supplies
+    </div>
+  </div>
+</td>
+</tr>
+
+
+<tr>
+    <td>
+    
+<div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://blog.insidetracker.com/hs-fs/hubfs/cheese%20healthy.jpg?width=1470&name=cheese%20healthy.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'cheese'  %}"> <h3>Cheese</h3></a>
+      <div>
+        Cheese is a dairy product, derived from milk comprising of proteins and fats
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://www.gordonramsayrestaurants.com/assets/Uploads/_resampled/CroppedFocusedImage108081050-50-WorldsBestChocolateBrownies-GordonRamsay.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Baking'  %}"> <h3>Baking</h3></a>
+      <div>
+        Bakery products, which include bread, rolls, cookies, pies, pastries, and muffins.
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2019/09/paleo-meat-array.jpg?fit=1200%2C879&ssl=1">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Meat'  %}"> <h3>Meat</h3></a>
+      <div>
+        Meat is one of the main sources of vitamin B12 in the diet.
+    </div>
+  </div>
+</td>
+</tr>
+
+<tr>
+    <td>
+    
+<div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://media.istockphoto.com/photos/group-of-sweet-and-salty-snacks-perfect-for-binge-watching-picture-id1149135424?s=612x612">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Snacks'  %}"> <h3>Snacks</h3></a>
+      <div>
+        Snacks are foods and drinks eaten between meals including chips, cookies
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://res.cloudinary.com/grohealth/image/upload/f_auto,fl_lossy,q_auto/v1583836679/DCUK/Content/iStock-821583034.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Refrigerateditems'  %}"><h3>Refrigerated items</h3></a>
+      <div>
+        Freeze or chill for preservation foods that should be refrigerated
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://www.thespruceeats.com/thmb/Cveb0VJEwZTmgoosPEK2ON21g8A=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/cannedfoodsWarren_Price-2d07bf3a98814f7b8f061e800a509627.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Cannedfoods'  %}"> <h3>Canned foods</h3></a>
+      <div>
+        Canned foods are minimally processed.
+    </div>
+  </div>
+</td>
+</tr>
+
+<tr>
+    <td>
+    
+<div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://www.businessinsider.in/thumb/msid-75767648,width-700,height-525,imgsize-276276/Where-to-buy-the-best-tasting-highest-quality-seafood-online.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Seafood'  %}"><h3>Sea food</h3></a>
+      <div>
+        This a demo experiment to skew image container. It looks good.
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://cdn.shortpixel.ai/spai/w_849+q_lossless+ret_img+to_auto/https://lemonsandbasil.com/wp-content/uploads/2014/02/_d_improd_/Featured-spaghetti-squash-tacos_f_improf_680x448.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Themedmeals'  %}"> <h3>Themedmeals</h3></a>
+      <div>
+        A meal theme is a tool to spark culinary inspiration and brainstorm ideas of what to cook.
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://img.packworld.com/files/base/pmmi/all/image/2020/04/2019_08_HF_Shoot_3____Chicken_Bowl_10.5e8b3dea8d3c4.png?auto=format%2Ccompress&q=70&w=700">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Frozen'  %}"><h3>Frozen </h3></a>
+      <div>
+        Can be kept frozen until used.
+    </div>
+  </div>
+</td>
+</tr>
+
+<tr>
+    <td>
+    
+<div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://www.nfcr.org/wp-content/uploads/2020/06/Can-Herbs-and-Spices-Cure-Cancer-for-upload.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Spicesherbs'  %}"> <h3>Spicesherbs</h3></a>
+      <div>
+        Various aromatic vegetable products
+
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://img2.exportersindia.com/product_images/bc-full/dir_99/2960206/beverages-1481869405-2643842.jpeg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Beverages'  %}"><h3>Beverages</h3> </a>
+      <div>
+        Common types of drinks include plain drinking water, milk, juice and soft drinks. Warm beverages include coffee, tea, and hot chocolate.
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="http://reliefline.net/wp-content/uploads/2019/08/baby-care-kit-1.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'BabyStuff'  %}"> <h3>Baby Stuff</h3></a>
+      <div>
+        Includes baby shampoos, baby Wash and baby lotions, baby oils, baby powders and baby creams
+    </div>
+  </div>
+</td>
+</tr>
+
+<tr>
+    <td>
+    
+<div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://im.rediff.com/money/2017/may/17money3.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Pets'  %}"> <h3>Pets</h3></a>
+      <div>
+        Nourishment or care of pets
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/body-wash-1594138330.jpg?crop=1.00xw:1.00xh;0,0&resize=980:*">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Personalcare'  %}"><h3>Personal care</h3></a>
+      <div>
+        Personal care products generally belong to hygienic practices and rinse off immediately after use.
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="http://bsmedia.business-standard.com/_media/bs/img/article/2016-12/23/full/1482515155-826.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Medicine'  %}"> <h3>Medicine</h3></a>
+      <div>
+        Field of health and healing
+
+    </div>
+  </div>
+</td>
+</tr>
+
+<tr>
+    <td>
+    
+<div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://www.chowhound.com/a/img/resize/9870fcf3b11af9076d567ec8ca28c058bf233a58/2019/11/best-products-to-help-reduce-paper-waste-chowhound-670x538.jpg?fit=bounds&width=800">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Kitchen'  %}"> <h3>Kitchen</h3></a>
+      <div>
+        Kitchenware are the tools, utensils, appliances, dishes, and cookware used in food preparation..
+
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://www.lifesavvy.com/p/uploads/2020/05/b77cfb22.jpg?width=1200">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Cleaningproducts'  %}"> <h3>Cleaning products</h3></a>
+      <div>
+        Cleaning agents or hard-surface cleaners and all the substances used to remove dirt
+    </div>
+  </div>
+</td>
+<td>
+  <div class="a-box">
+    <div class="img-container">
+      <div class="img-inner">
+        <div class="inner-skew">
+          <img src="https://www.smallbizdaily.com/wp-content/uploads/2018/10/shutterstock_400054315-min-768x512.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="text-container">
+        <a href="{% url 'grocery:grocery' 'Officesupplies'  %}"> <h3>Office supplies</h3></a>
+      <div>
+        Used regularly in an office environment to perform departmental personnel's daily work assignments.
+    </div>
+  </div>
+</td>
+</tr>
+
+
+
+</table>
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
+
+
+</body>
+</html>

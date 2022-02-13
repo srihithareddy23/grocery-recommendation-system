@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}Home
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+    <a class="navbar-brand" href="{% url 'grocery:home1' %}">Our Ecommerce</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'grocery:home1' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Categories</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'grocery:mycart' %}">Cart</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            My Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% if request.user.customer %}
+            <a class="dropdown-item" href="{% url 'grocery:customerprofile' %}">My Profile</a>
+            <a class="dropdown-item" href="{% url 'grocery:customerlogout' %}">Logout</a>
+            {% else %}
+            <a class="dropdown-item" href="{% url 'grocery:customerregistration' %}">Register</a>
+            <a class="dropdown-item" href="{% url 'grocery:customerlogin' %}">Login</a>
+            {% endif %}
+            </div>
+        </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action="{% url 'grocery:search' %}" method="GET">
+        <input name="keyword" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
+        <button class="btn btn-danger my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+    </nav>
+    {% endblock %}
+
+
+{% block content %}
+<div class="container">
+
+    <h1 class="text-center">Recommended Items </h1>
+    <hr>
+    <div class="row mt-3">
+       
+        {% for p in x %}
+        <div class="col-md-3 card">
+            <div class="m-4">
+           
+              
+                <h4><a href="#">{{p.Title}}</a></h4>
+              
+            
+               
+                <!--<p class="mt-3">Price: <strike>Rs. {{p.marked_price}}</strike> Rs. {{p.selling_price}}</p>-->
+                <a href="{% url 'grocery:addtocart' p.id %}" class="btn btn-primary">Add To Cart</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,253 @@
+ItemID,Title,Category
+1,Asparagus,Fresh Vegetables
+2,Broccoli,Fresh Vegetables
+3,Carrots,Fresh Vegetables
+4,Cauliflower,Fresh Vegetables
+5,Celery,Fresh Vegetables
+6,Corn,Fresh Vegetables
+7,Cucumbers,Fresh Vegetables
+8,Lettuce / Greens,Fresh Vegetables
+9,Mushrooms,Fresh Vegetables
+10,Onions,Fresh Vegetables
+11,Peppers,Fresh Vegetables
+12,Potatoes,Fresh Vegetables
+13,Spinach,Fresh Vegetables
+14,Squash,Fresh Vegetables
+15,Zucchini,Fresh Vegetables
+16,Tomatoes,Fresh Vegetables
+17,BBQ sauce,Sauces
+18,Gravy,Sauces
+19,Honey,Sauces
+20,Hot sauce,Sauces
+21,Jam / Jelly / Preserves,Sauces
+22,Ketchup / Mustard,Sauces
+23,Mayonnaise,Sauces
+24,Pasta sauce,Sauces
+25,Relish,Sauces
+26,Salad dressing,Sauces
+27,Salsa,Sauces
+28,Soy sauce,Sauces
+29,Steak sauce,Sauces
+30,Syrup,Sauces
+31,Worcestershire sauce,Sauces
+32,Butter / Margarine,Dairy
+33,Cottage cheese,Dairy
+34,Half & half,Dairy
+35,Milk,Dairy
+36,Sour cream,Dairy
+37,Whipped cream,Dairy
+38,Yogurt,Dairy
+39,Bagels / Croissants,Baked goods
+40,Buns / Rolls,Baked goods
+41,Cake / Cookies,Baked goods
+42,Donuts / Pastries,Baked goods
+43,Fresh bread,Baked goods
+44,Pie,Baked goods
+45,Pita bread,Baked goods
+46,Sliced bread,Baked goods
+47,Apples,Fruits
+48,Avocados,Fruits
+49,Bananas,Fruits
+50,Berries,Fruits
+51,Cherries,Fruits
+52,Grapefruit,Fruits
+53,Grapes,Fruits
+54,Kiwis,Fruits
+55,Lemons / Limes,Fruits
+56,Melon,Fruits
+57,Nectarines,Fruits
+58,Oranges,Fruits
+59,Peaches,Fruits
+60,Pears,Fruits
+61,Plums,Fruits
+62,Bouillon cubes,Variousgroceries
+63,Cereal,Variousgroceries
+64,Coffee / Filters,Variousgroceries
+65,Instant potatoes,Variousgroceries
+66,Lemon / Lime juice,Variousgroceries
+67,Mac & cheese,Variousgroceries
+68,Olive oil,Variousgroceries
+69,Packaged meals,Variousgroceries
+70,Pancake / Waffle mix,Variousgroceries
+71,Pasta,Variousgroceries
+72,Peanut butter,Variousgroceries
+73,Pickles,Variousgroceries
+74,Rice,Variousgroceries
+75,Tea,Variousgroceries
+76,Vegetable oil,Variousgroceries
+77,Vinegar,Variousgroceries
+78,Blue cheese,cheese
+79,Cheddar,cheese
+80,Cottage cheese,cheese
+81,Cream cheese,cheese
+82,Feta,cheese
+83,Goat cheese,cheese
+84,Mozzarella,cheese
+85,Parmesan,cheese
+86,Provolone,cheese
+87,Ricotta,cheese
+88,Sandwich slices,cheese
+89,Swiss,cheese
+90,Baking powder / Soda,Baking
+91,Bread crumbs,Baking
+92,Cake / Brownie mix,Baking
+93,Cake icing / Decorations,Baking
+94,Chocolate chips / Cocoa,Baking
+95,Flour,Baking
+96,Shortening,Baking
+97,Sugar,Baking
+98,Sugar substitute,Baking
+99,Yeast,Baking
+100,Bacon / Sausage,Meat
+101,Beef,Meat
+102,Chicken,Meat
+103,Ground beef / Turkey,Meat
+104,Ham / Pork,Meat
+105,Hot dogs,Meat
+106,Lunchmeat,Meat
+107,Turkey,Meat
+108,Candy / Gum,Snacks
+109,Cookies,Snacks
+110,Crackers,Snacks
+111,Dried fruit,Snacks
+112,Granola bars / Mix,Snacks
+113,Nuts / Seeds,Snacks
+114,Oatmeal,Snacks
+115,Popcorn,Snacks
+116,Potato / Corn chips,Snacks
+117,Pretzels,Snacks
+118,Bagels,Refrigerateditems
+119,Chip dip,Refrigerateditems
+120,Eggs / Fake eggs,Refrigerateditems
+121,English muffins,Refrigerateditems
+122,Fruit juice,Refrigerateditems
+123,Hummus,Refrigerateditems
+124,Ready-bake breads,Refrigerateditems
+125,Tofu,Refrigerateditems
+126,Tortillas,Refrigerateditems
+127,Applesauce,Cannedfoods
+128,Baked beans,Cannedfoods
+129,Broth,Cannedfoods
+130,Fruit,Cannedfoods
+131,Olives,Cannedfoods
+132,Tinned meats,Cannedfoods
+133,Tuna / Chicken,Cannedfoods
+134,Soup / Chili,Cannedfoods
+135,Tomatoes,Cannedfoods
+136,Veggies,Cannedfoods
+137,Catfish,Seafood
+138,Crab,Seafood
+139,Lobster,Seafood
+140,Mussels,Seafood
+141,Oysters,Seafood
+142,Salmon,Seafood
+143,Shrimp,Seafood
+144,Tilapia,Seafood
+145,Tuna,Seafood
+146,Burger night,Themedmeals
+147,Chili night,Themedmeals
+148,Pizza night,Themedmeals
+149,Spaghetti night,Themedmeals
+150,Taco night,Themedmeals
+151,Take-out deli food,Themedmeals
+152,Breakfasts,Frozen
+153,Burritos,Frozen
+154,Fish sticks,Frozen
+155,Fries / Tater tots,Frozen
+156,Ice cream / Sorbet,Frozen
+157,Juice concentrate,Frozen
+158,Pizza,Frozen
+159,Pizza Rolls,Frozen
+160,Popsicles,Frozen
+161,TV dinners,Frozen
+162,Vegetables,Frozen
+163,Basil,Spicesherbs
+164,Black pepper,Spicesherbs
+165,Cilantro,Spicesherbs
+166,Cinnamon,Spicesherbs
+167,Garlic,Spicesherbs
+168,Ginger,Spicesherbs
+169,Mint,Spicesherbs
+170,Oregano,Spicesherbs
+171,Paprika,Spicesherbs
+172,Parsley,Spicesherbs
+173,Red pepper,Spicesherbs
+174,Salt,Spicesherbs
+175,Vanilla extract,Spicesherbs
+176,Beer,Beverages
+177,Club soda / Tonic,Beverages
+178,Champagne,Beverages
+179,Gin,Beverages
+180,Juice,Beverages
+181,Mixers,Beverages
+182,Red wine / White wine,Beverages
+183,Rum,Beverages
+184,Sake,Beverages
+185,Soda pop,Beverages
+186,Sports drink,Beverages
+187,Whiskey,Beverages
+188,Vodka,Beverages
+189,Baby food,BabyStuff
+190,Diapers,BabyStuff
+191,Formula,BabyStuff
+192,Lotion,BabyStuff
+193,Baby wash,BabyStuff
+194,Wipes,BabyStuff
+195,Cat food / Treats,Pets
+196,Cat litter,Pets
+197,Dog food / Treats,Pets
+198,Flea treatment,Pets
+199,Pet shampoo,Pets
+200,Antiperspirant / Deodorant,Personalcare
+201,Bath soap / Hand soap,Personalcare
+202,Condoms / Other b.c.,Personalcare
+203,Cosmetics,Personalcare
+204,Cotton swabs / Balls,Personalcare
+205,Facial cleanser,Personalcare
+206,Facial tissue,Personalcare
+207,Floss,Personalcare
+208,Hair gel / Spray,Personalcare
+209,Lip balm,Personalcare
+210,Moisturizing lotion,Personalcare
+211,Mouthwash,Personalcare
+212,Razors / Shaving cream,Personalcare
+213,Shampoo / Conditioner,Personalcare
+214,Sunblock,Personalcare
+215,Toilet paper,Personalcare
+216,Toothpaste,Personalcare
+217,Vitamins / Supplements,Personalcare
+218,Allergy,Medicine
+219,Antibiotic,Medicine
+220,Antidiarrheal,Medicine
+221,Aspirin,Medicine
+222,Antacid,Medicine
+223,Band-aids / Medical,Medicine
+224,Cold / Flu / Sinus,Medicine
+225,Pain reliever,Medicine
+226,Prescription pick-up,Medicine
+227,Aluminum foil,Kitchen
+228,Napkins,Kitchen
+229,Non-stick spray,Kitchen
+230,Paper towels,Kitchen
+231,Plastic wrap,Kitchen
+232,Sandwich / Freezer bags,Kitchen
+233,Wax paper,Kitchen
+234,Air freshener,Cleaningproducts
+235,Bathroom cleaner,Cleaningproducts
+236,Bleach / Detergent,Cleaningproducts
+237,Dish / Dishwasher soap,Cleaningproducts
+238,Garbage bags,Cleaningproducts
+239,Glass cleaner,Cleaningproducts
+240,Mop head / Vacuum bags,Cleaningproducts
+241,Sponges / Scrubbers,Cleaningproducts
+242,CDRs / DVDRs,Officesupplies
+243,Notepad / Envelopes,Officesupplies
+244,Glue / Tape,Officesupplies
+245,Printer paper,Officesupplies
+246,Pens / Pencils,Officesupplies
+247,Postage stamps,Officesupplies
+248,Arsenic,Carcinogens
+249,Asbestos,Carcinogens
+250,Cigarettes,Carcinogens
+251,Radionuclides,Carcinogens
+252,Vinyl chloride,Carcinogens
